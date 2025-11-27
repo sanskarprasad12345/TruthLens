@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Truth Lens - AI-Powered Fact Verification & News Analysis Platform">
+    <title>Truth Lens | AI Fact Verification Engine</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="cyber-background">
+        <div class="particles-container" id="particles"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo-section">
+                    <i class="fas fa-shield-halved logo-icon"></i>
+                    <span class="logo-text">Truth<span class="accent">Lens</span></span>
+                    <span class="version-tag">v2.0.1</span>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#detector" class="nav-link"><i class="fas fa-scanner"></i> Detector</a></li>
+                    <li><a href="#verify" class="nav-link"><i class="fas fa-image"></i> Media Check</a></li>
+                    <li><a href="#feed" class="nav-link"><i class="fas fa-newspaper"></i> News Feed</a></li>
+                    <li><a href="#history" class="nav-link"><i class="fas fa-clock-rotate-left"></i> History</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="btn-icon" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="btn-primary">
+                        <i class="fas fa-rocket"></i> Launch AI
+                    </button>
+                </div>
+
+                <div class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="status-badge">
+                    <span class="status-dot"></span>
+                    AI Engine Active • Real-time Analysis
+                </div>
+                
+                <h1 class="hero-title">
+                    <span class="gradient-text">Decoding Truth</span><br>
+                    In The Age of Misinformation
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Advanced AI-powered fact verification engine that analyzes news, media, and claims 
+                    with military-grade accuracy. Expose manipulation. Verify sources. Protect truth.
+                </p>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="2847562">0</div>
+                        <div class="stat-label">Facts Verified</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="98.7">0</div>
+                        <div class="stat-label">% Accuracy Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="156">0</div>
+                        <div class="stat-label">Countries Served</div>
+                    </div>
+                </div>
+
+                <div class="cta-buttons">
+                    <button class="btn-large btn-primary" onclick="scrollToSection('detector')">
+                        <i class="fas fa-play"></i> Start Verification
+                    </button>
+                    <button class="btn-large btn-secondary">
+                        <i class="fas fa-book"></i> Documentation
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="btn-close"></span>
+                            <span class="btn-minimize"></span>
+                            <span class="btn-maximize"></span>
+                        </div>
+                        <span class="terminal-title">truth-lens://ai-core</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="prompt">$</span> <span class="command">initialize</span> <span class="param">--ai-engine</span>
+                        </div>
+                        <div class="terminal-line output">
+                            <span class="success">✓</span> Neural networks loaded
+                        </div>
+                        <div class="terminal-line output">
+                            <span class="success">✓</span> Fact database synchronized
+                        </div>
+                        <div class="terminal-line output">
+                            <span class="success">✓</span> Real-time scanning active
+                        </div>
+                        <div class="terminal-line">
+                            <span class="prompt">$</span> <span class="cursor-blink">_</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Features Section -->
+    <section class="features-grid" id="detector">
+        <div class="container">
+            <!-- Feature 1: Fake News Detector -->
+            <div class="feature-panel main-panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <i class="fas fa-radar"></i>
+                        <h2>AI Fake News Detector</h2>
+                    </div>
+                    <div class="panel-status">
+                        <span class="status-indicator active"></span>
+                        <span>Engine Running</span>
+                    </div>
+                </div>
+
+                <div class="panel-body">
+                    <div class="input-section">
+                        <label class="input-label">
+                            <i class="fas fa-file-lines"></i> Paste News Article or Claim
+                        </label>
+                        <textarea 
+                            id="newsInput" 
+                            class="code-textarea" 
+                            placeholder="Enter or paste news content here for AI analysis...&#10;&#10;Example: 'Breaking: Scientists discover cure for aging'&#10;&#10;The AI will analyze credibility, source reliability, and factual accuracy."
+                            rows="6"
+                        ></textarea>
+                        
+                        <div class="input-toolbar">
+                            <div class="char-count">
+                                <span id="charCount">0</span> / 5000 characters
+                            </div>
+                            <button class="btn-icon" id="clearText" title="Clear">
+                                <i class="fas fa-eraser"></i>
+                            </button>
+                            <button class="btn-icon" id="pasteText" title="Paste">
+                                <i class="fas fa-paste"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="url-input-section">
+                        <label class="input-label">
+                            <i class="fas fa-link"></i> Or Enter Article URL
+                        </label>
+                        <div class="input-group">
+                            <input 
+                                type="url" 
+                                id="urlInput" 
+                                class="code-input" 
+                                placeholder="https://example.com/news-article"
+                            >
+                            <button class="btn-icon-input" id="fetchUrl">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="btn-analyze" id="analyzeBtn">
+                        <span class="btn-content">
+                            <i class="fas fa-brain"></i>
+                            <span>Analyze with AI</span>
+                        </span>
+                        <span class="btn-loader"></span>
+                    </button>
+
+                    <!-- Results Panel -->
+                    <div class="results-container" id="resultsContainer" style="display: none;">
+                        <div class="result-header">
+                            <h3><i class="fas fa-chart-line"></i> Analysis Results</h3>
+                            <button class="btn-icon" id="closeResults">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+
+                        <!-- Truth Percentage -->
+                        <div class="truth-meter">
+                            <div class="meter-label">Truth Probability</div>
+                            <div class="circular-progress">
+                                <svg width="200" height="200">
+                                    <circle cx="100" cy="100" r="90" class="progress-bg"></circle>
+                                    <circle cx="100" cy="100" r="90" class="progress-fill" id="progressCircle"></circle>
+                                </svg>
+                                <div class="progress-text">
+                                    <span class="percentage" id="truthPercentage">0</span>
+                                    <span class="percent-symbol">%</span>
+                                </div>
+                            </div>
+                            <div class="verdict-badge" id="verdictBadge">
+                                <i class="fas fa-shield-check"></i>
+                                <span id="verdictText">ANALYZING...</span>
+                            </div>
+                        </div>
+
+                        <!-- AI Summary -->
+                        <div class="analysis-section">
+                            <h4><i class="fas fa-newspaper"></i> AI Summary</h4>
+                            <div class="summary-box" id="aiSummary">
+                                <p class="loading-text">Processing content...</p>
+                            </div>
+                        </div>
+
+                        <!-- Evidence Points -->
+                        <div class="analysis-section">
+                            <h4><i class="fas fa-list-check"></i> Evidence & Facts</h4>
+                            <div class="evidence-list" id="evidenceList">
+                                <!-- Dynamically populated -->
+                            </div>
+                        </div>
+
+                        <!-- Source Credibility -->
+                        <div class="analysis-section">
+                            <h4><i class="fas fa-building"></i> Source Credibility</h4>
+                            <div class="credibility-scores" id="credibilityScores">
+                                <!-- Dynamically populated -->
+                            </div>
+                        </div>
+
+                        <!-- Red Flags -->
+                        <div class="analysis-section">
+                            <h4><i class="fas fa-flag"></i> Suspicious Elements</h4>
+                            <div class="red-flags" id="redFlags">
+                                <!-- Dynamically populated -->
+                            </div>
+                        </div>
+
+                        <div class="result-actions">
+                            <button class="btn-secondary" id="shareResult">
+                                <i class="fas fa-share-nodes"></i> Share Analysis
+                            </button>
+                            <button class="btn-secondary" id="downloadReport">
+                                <i class="fas fa-file-pdf"></i> Export Report
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 2: Source Credibility Checker -->
+            <div class="feature-panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <i class="fas fa-building-shield"></i>
+                        <h3>Source Credibility Score</h3>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="input-section">
+                        <label class="input-label">
+                            <i class="fas fa-globe"></i> Publisher/Source Name or URL
+                        </label>
+                        <input 
+                            type="text" 
+                            id="sourceInput" 
+                            class="code-input" 
+                            placeholder="e.g., CNN, BBC, nytimes.com"
+                        >
+                    </div>
+                    <button class="btn-analyze secondary" id="checkSourceBtn">
+                        <i class="fas fa-magnifying-glass"></i> Check Source
+                    </button>
+
+                    <div class="source-results" id="sourceResults" style="display: none;">
+                        <div class="credibility-card">
+                            <div class="score-display">
+                                <div class="score-circle" id="sourceScore">
+                                    <span class="score-value">0</span>
+                                    <span class="score-max">/100</span>
+                                </div>
+                            </div>
+                            <div class="score-details">
+                                <div class="score-row">
+                                    <span>Bias Level:</span>
+                                    <div class="bias-indicator" id="biasLevel">
+                                        <span class="bias-label">Neutral</span>
+                                        <div class="bias-bar">
+                                            <div class="bias-fill"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="score-row">
+                                    <span>Reliability:</span>
+                                    <div class="rating-stars" id="reliability">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="score-row">
+                                    <span>Track Record:</span>
+                                    <span class="track-status" id="trackRecord">Excellent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="source-info" id="sourceInfo">
+                            <!-- Populated by AI -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 3: Image Verification -->
+            <div class="feature-panel" id="verify">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <i class="fas fa-image"></i>
+                        <h3>Image & Media Verification</h3>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="upload-zone" id="imageUploadZone">
+                        <i class="fas fa-cloud-arrow-up upload-icon"></i>
+                        <p class="upload-text">Drag & Drop Image or Click to Upload</p>
+                        <p class="upload-subtext">Supports: JPG, PNG, WebP, GIF • Max 10MB</p>
+                        <input type="file" id="imageInput" accept="image/*" hidden>
+                    </div>
+
+                    <div class="url-input-section">
+                        <label class="input-label">
+                            <i class="fas fa-link"></i> Or Enter Image URL
+                        </label>
+                        <div class="input-group">
+                            <input 
+                                type="url" 
+                                id="imageUrlInput" 
+                                class="code-input" 
+                                placeholder="https://example.com/image.jpg"
+                            >
+                            <button class="btn-icon-input" id="fetchImage">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="image-preview" id="imagePreview" style="display: none;">
+                        <img id="previewImg" src="" alt="Preview">
+                        <button class="btn-remove" id="removeImage">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <div class="verification-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="checkManipulation" checked>
+                            <span>Detect Manipulation</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="checkAIGenerated" checked>
+                            <span>Check if AI-Generated</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="reverseSearch" checked>
+                            <span>Reverse Image Search</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="checkDeepfake">
+                            <span>Deepfake Detection (for faces)</span>
+                        </label>
+                    </div>
+
+                    <button class="btn-analyze" id="verifyImageBtn" disabled>
+                        <i class="fas fa-shield-check"></i> Verify Image
+                    </button>
+
+                    <div class="image-results" id="imageResults" style="display: none;">
+                        <div class="result-grid">
+                            <div class="result-card">
+                                <div class="card-icon manipulation">
+                                    <i class="fas fa-wand-magic-sparkles"></i>
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-label">Manipulation</span>
+                                    <span class="card-value" id="manipulationScore">0%</span>
+                                </div>
+                            </div>
+                            <div class="result-card">
+                                <div class="card-icon ai-gen">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-label">AI-Generated</span>
+                                    <span class="card-value" id="aiGenScore">0%</span>
+                                </div>
+                            </div>
+                            <div class="result-card">
+                                <div class="card-icon deepfake">
+                                    <i class="fas fa-user-secret"></i>
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-label">Deepfake Risk</span>
+                                    <span class="card-value" id="deepfakeScore">0%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="analysis-section">
+                            <h4><i class="fas fa-clock-rotate-left"></i> Image Origin Tracking</h4>
+                            <div class="origin-timeline" id="originTimeline">
+                                <!-- Populated by AI -->
+                            </div>
+                        </div>
+
+                        <div class="analysis-section">
+                            <h4><i class="fas fa-magnifying-glass"></i> Similar Images Found</h4>
+                            <div class="similar-images" id="similarImages">
+                                <!-- Populated by reverse search -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 4: Live Fact-Check -->
+            <div class="feature-panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Live Fact-Check Scanner</h3>
+                    </div>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="liveCheckToggle">
+                        <label for="liveCheckToggle"></label>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <p class="feature-description">
+                        Enable real-time scanning while reading. AI highlights suspicious claims instantly.
+                    </p>
+                    
+                    <div class="live-scan-area" id="liveScanArea">
+                        <div contenteditable="true" class="editable-content" id="liveContent" placeholder="Start typing or paste article content here...">
+                        </div>
+                    </div>
+
+                    <div class="live-results" id="liveResults">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Flagged Claims (<span id="flagCount">0</span>)</h4>
+                        <div class="flagged-list" id="flaggedList">
+                            <div class="empty-state">
+                                <i class="fas fa-shield-check"></i>
+                                <p>No suspicious claims detected yet</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Feed Section -->
+    <section class="news-feed-section" id="feed">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-newspaper"></i> Bias-Balanced News Feed</h2>
+                <div class="feed-controls">
+                    <select class="select-input" id="topicSelect">
+                        <option value="all">All Topics</option>
+                        <option value="politics">Politics</option>
+                        <option value="technology">Technology</option>
+                        <option value="health">Health</option>
+                        <option value="science">Science</option>
+                        <option value="climate">Climate</option>
+                    </select>
+                    <button class="btn-icon" id="refreshFeed">
+                        <i class="fas fa-rotate"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="perspective-grid" id="perspectiveGrid">
+                <!-- Left-leaning -->
+                <div class="perspective-column left">
+                    <div class="column-header">
+                        <span class="bias-badge left-bias">Left-Leaning</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </div>
+                    <div class="news-cards" id="leftNews">
+                        <!-- Populated by AI -->
+                    </div>
+                </div>
+
+                <!-- Center -->
+                <div class="perspective-column center">
+                    <div class="column-header">
+                        <span class="bias-badge center-bias">Center/Neutral</span>
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="news-cards" id="centerNews">
+                        <!-- Populated by AI -->
+                    </div>
+                </div>
+
+                <!-- Right-leaning -->
+                <div class="perspective-column right">
+                    <div class="column-header">
+                        <span class="bias-badge right-bias">Right-Leaning</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="news-cards" id="rightNews">
+                        <!-- Populated by AI -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hot Topics Radar -->
+    <section class="hot-topics-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-fire"></i> Hot Topic Radar</h2>
+                <span class="update-time">Updated 5 min ago</span>
+            </div>
+
+            <div class="radar-grid" id="radarGrid">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Checks History -->
+    <section class="history-section" id="history">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-clock-rotate-left"></i> Recent Verified Checks</h2>
+                <div class="history-controls">
+                    <input type="search" class="search-input" id="historySearch" placeholder="Search history...">
+                    <button class="btn-secondary" id="clearHistory">
+                        <i class="fas fa-trash"></i> Clear All
+                    </button>
+                </div>
+            </div>
+
+            <div class="history-grid" id="historyGrid">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-section">
+                        <i class="fas fa-shield-halved logo-icon"></i>
+                        <span class="logo-text">Truth<span class="accent">Lens</span></span>
+                    </div>
+                    <p class="footer-description">
+                        Military-grade AI fact verification platform. Protecting truth in the digital age.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="#detector">Fact Checker</a></li>
+                        <li><a href="#verify">Media Verification</a></li>
+                        <li><a href="#feed">News Feed</a></li>
+                        <li><a href="#history">History</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Accuracy Reports</a></li>
+                        <li><a href="#">Research Papers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 TruthLens AI. All rights reserved.</p>
+                <p class="footer-note">
+                    <i class="fas fa-shield-check"></i> 
+                    Powered by advanced neural networks and real-time fact databases
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p class="loader-text">AI Engine Processing...</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="ai-engine.js"></script>
+</body>
+</html>
